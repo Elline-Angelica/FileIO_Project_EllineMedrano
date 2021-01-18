@@ -19,14 +19,19 @@ import java.util.stream.Stream;
 public class Organizer {
     public static void main(String[] args) throws IOException {
 
-        Files.walk(Paths.get("/Users/gast/Downloads/unsorted"))
-        .forEach(path -> System.out.println(path.getFileName()));
+        Organizer og = new Organizer();
+        og.scanDirectory("/Users/gast/Downloads/unsorted");
 
         System.out.println();
 
         Path path = Paths.get("/Users/gast/Downloads/unsorted");
         List<Path> paths = findByFileExtension(path, ".txt");
         paths.forEach(x -> System.out.println(x.getFileName()));
+    }
+
+    public void scanDirectory(String sourcePath) throws IOException {
+        Files.walk(Paths.get(sourcePath))
+                .forEach(path -> System.out.println(path.getFileName()));
     }
 
     public static List<Path> findByFileExtension(Path path, String fileExtension)
