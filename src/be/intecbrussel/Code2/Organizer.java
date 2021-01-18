@@ -1,4 +1,4 @@
-package be.intecbrussel.Code3;
+package be.intecbrussel.Code2;
 
 import java.io.*;
 
@@ -35,15 +35,15 @@ public class Organizer {
         return fileType;
     }
 
-    public void makeNewDirectory (String nameNewFolder) {
+    public void makeNewDirectory (String nameNewExtFolder) {
         String path="/Users/gast/Downloads/test";
-        String newFolder = nameNewFolder;
+        String newFolder = nameNewExtFolder;
         File file = new File(path);
 
         if(!file.exists())
             file.mkdirs();
 
-        file = new File(path + "/" + newFolder);
+        file = new File(path + "/" + nameNewExtFolder);
         file.mkdirs();
     }
 }

@@ -28,16 +28,26 @@ public class Organizer {
         og.createNewSortedDirectories("txt");
 
         //copy files to new path
+        og.copyFiles("/Users/gast/Downloads/unsorted","/Users/gast/Downloads/anotha/txt");
 
         //create summmary
+
+        ;
 
 
     }
 
-    public void createNewSortedDirectories(String fe) throws IOException {
+    public void copyFiles(String sourcePath, String destinationPath) throws IOException {
+        Path from = Paths.get(sourcePath);
+        Path to = Paths.get(destinationPath);
+
+        Files.copy(from, to);
+    }
+
+    public void createNewSortedDirectories(String fex) throws IOException {
         //sort by ext type
         Path path = Paths.get("/Users/gast/Downloads/unsorted");
-        List<Path> paths = findByFileExtension(path, fe);
+        List<Path> paths = findByFileExtension(path, fex);
         //paths.forEach(x -> System.out.println(x.getFileName()));
         paths.toArray();
 
@@ -48,7 +58,7 @@ public class Organizer {
         }
 
         //sub directories
-        String newpath = "/Users/gast/Downloads/anotha/" + fe ;
+        String newpath = "/Users/gast/Downloads/anotha/" + fex ;
         File file = new File(newpath);
         file.mkdirs();
     }
