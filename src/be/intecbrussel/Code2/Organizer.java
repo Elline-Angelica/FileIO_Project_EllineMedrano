@@ -28,12 +28,11 @@ public class Organizer {
             pw.write(getFileType(s) + "\n");
         }
         pw.close();
-
     }
 
     public static String getFileType(String path){
         Organizer og = new Organizer();
-        String fileType = null;
+        String fileType;
         fileType = path.substring(path.indexOf('.',path.lastIndexOf('/'))+1);
         og.makeNewDirectory(fileType);
         return fileType;
