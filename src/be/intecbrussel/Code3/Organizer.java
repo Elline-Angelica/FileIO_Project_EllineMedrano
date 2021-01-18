@@ -18,7 +18,7 @@ public class Organizer {
             getFileType(pathname);
         }
 
-        File file = new File("resources/summary.txt");
+        File file = new File("resources/summary3.txt");
         FileWriter fw = new FileWriter(file);
         PrintWriter pw = new PrintWriter(fw);
         for (String s : pathNames) {

@@ -19,14 +19,38 @@ import java.util.stream.Stream;
 public class Organizer {
     public static void main(String[] args) throws IOException {
 
+        //scan files
         Organizer og = new Organizer();
         og.scanDirectory("/Users/gast/Downloads/unsorted");
-
         System.out.println();
 
+        //create destination dirs
+        og.createNewSortedDirectories("txt");
+
+        //copy files to new path
+
+        //create summmary
+
+
+    }
+
+    public void createNewSortedDirectories(String fe) throws IOException {
+        //sort by ext type
         Path path = Paths.get("/Users/gast/Downloads/unsorted");
-        List<Path> paths = findByFileExtension(path, ".txt");
-        paths.forEach(x -> System.out.println(x.getFileName()));
+        List<Path> paths = findByFileExtension(path, fe);
+        //paths.forEach(x -> System.out.println(x.getFileName()));
+        paths.toArray();
+
+        //main directory
+        for(Path s : paths){
+            File f = new File("/Users/gast/Downloads/anotha");
+            f.mkdirs();
+        }
+
+        //sub directories
+        String newpath = "/Users/gast/Downloads/anotha/" + fe ;
+        File file = new File(newpath);
+        file.mkdirs();
     }
 
     public void scanDirectory(String sourcePath) throws IOException {
