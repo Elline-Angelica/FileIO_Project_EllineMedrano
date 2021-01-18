@@ -7,9 +7,10 @@ import java.util.Arrays;
 
 public class Organizer {
 
-    // 1. find files
-    // 2. make new directory
-    // 3. copy unsorted
+    // 1. find files - done
+    // 2. make new directory - done
+    // 3. copy unsorted - still figuring out
+    // 4. summary text?? - still figuring out as well
 
     public void getArrayOfFilesInDirectory (String folder) throws IOException {
         String [] pathNames;
