@@ -11,6 +11,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+// 1. find files - done
+// 2. make new directory - done
+// 3. copy unsorted - still figuring out
+// 4. summary text?? - still figuring out as well
+
 public class Organizer {
     public static void main(String[] args) throws IOException {
 
