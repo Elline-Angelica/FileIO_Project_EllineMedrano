@@ -1,4 +1,4 @@
-package be.intecbrussel.Code1;
+package be.intecbrussel.Code2;
 
 import java.io.*;
 
