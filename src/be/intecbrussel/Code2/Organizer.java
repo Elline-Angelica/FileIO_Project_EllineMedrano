@@ -11,20 +11,41 @@ public class Organizer {
     // 2. make new directory
     // 3. copy unsorted
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Organizer og = new Organizer();
-        og.getListOfFilesInDirectory("/Users/gast/Downloads/unsorted");
+        og.getArrayOfFilesInDirectory("/Users/gast/Downloads/unsorted");
+
+    }
+
+    public void getArrayOfFilesInDirectory (String folder) throws IOException {
+        String [] pathNames;
+        File f = new File (folder);
+        pathNames = f.list();
+
+        for (String pathname : pathNames) {
+            getFileType(pathname);
+        }
+
+        File file = new File("resources/textfile.txt");
+        FileWriter fw = new FileWriter(file);
+        PrintWriter pw = new PrintWriter(fw);
+        for (String s : pathNames) {
+            pw.write(getFileType(s) + "\n");
+        }
+        pw.close();
 
     }
 
     public static String getFileType(String path){
+        Organizer og = new Organizer();
         String fileType = null;
         fileType = path.substring(path.indexOf('.',path.lastIndexOf('/'))+1);
+        og.makeNewDirectory(fileType);
         return fileType;
     }
 
     public void makeNewDirectory (String nameNewFolder) {
-        String path="/Users/gast/Downloads/sorted";
+        String path="/Users/gast/Downloads/test";
         String newFolder = nameNewFolder;
         File file = new File(path);
 
@@ -34,18 +55,4 @@ public class Organizer {
         file = new File(path + "/" + newFolder);
         file.mkdirs();
     }
-
-    public void getListOfFilesInDirectory (String folder){
-        String [] pathnames;
-        File f = new File (folder);
-        pathnames = f.list();
-
-        for (String pathname : pathnames) {
-            if (pathname == "gif") {
-                makeNewDirectory(getFileType(pathname));
-
-            }
-        }
-    }
-
 }
