@@ -11,12 +11,6 @@ public class Organizer {
     // 2. make new directory
     // 3. copy unsorted
 
-    public static void main(String[] args) throws IOException {
-        Organizer og = new Organizer();
-        og.getArrayOfFilesInDirectory("/Users/gast/Downloads/unsorted");
-
-    }
-
     public void getArrayOfFilesInDirectory (String folder) throws IOException {
         String [] pathNames;
         File f = new File (folder);
@@ -26,7 +20,7 @@ public class Organizer {
             getFileType(pathname);
         }
 
-        File file = new File("resources/textfile.txt");
+        File file = new File("resources/summary.txt");
         FileWriter fw = new FileWriter(file);
         PrintWriter pw = new PrintWriter(fw);
         for (String s : pathNames) {
