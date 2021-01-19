@@ -4,8 +4,8 @@ public class Application {
 
     public static void main(String[] args) {
 
-        //Organizer organizer = new Organizer();
-        // organizer.makeDirectories();
+        // Organizer organizer = new Organizer();
+        // organizer.manuallyMakeDirectories();
         // organizer.getFilesFromDirectory();
 
         FileOrganizer copyFiles = new FileOrganizer();
@@ -19,5 +19,8 @@ public class Application {
         copyFiles.copy("py", "/Users/gast/Downloads/unsorted", "/Users/gast/Downloads/sorted/py");
         copyFiles.copy("txt", "/Users/gast/Downloads/unsorted", "/Users/gast/Downloads/sorted/text");
         copyFiles.copy("wma", "/Users/gast/Downloads/unsorted", "/Users/gast/Downloads/sorted/wma");
+
+
+
     }
 }

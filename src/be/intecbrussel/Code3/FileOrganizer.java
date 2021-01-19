@@ -4,7 +4,6 @@ import java.io.*;
 
 public class FileOrganizer {
 
-    //to get filename extension data
     public void getFilesFromDirectory(){
 
         File directoryPath = new File("/Users/gast/Downloads/sorted");
@@ -19,8 +18,7 @@ public class FileOrganizer {
 
     }
 
-    //to redirect
-    public void makeDirectories() {
+    public void manuallyMakeDirectories() {
 
         String csv = "/Users/gast/Downloads/sorted/csv";
         File file = new File(csv);

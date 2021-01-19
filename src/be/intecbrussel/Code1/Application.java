@@ -1,5 +1,8 @@
 package be.intecbrussel.Code1;
 
+import be.intecbrussel.Code2.Organizer;
+
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,21 +12,38 @@ public class Application {
     public static void main(String[] args) throws IOException {
 
         Files.walk(Paths.get("/Users/gast/Downloads/unsorted"))
-                .forEach(path -> System.out.println(path.getFileName()));
+                .forEach(path -> {
+                    path.toString().substring(path.toString().indexOf('.', path.toString().lastIndexOf('/')) + 1);
+                    String filePath;
+                    filePath = path.toString();
+                    String sourceFile;
+                    sourceFile = path.getFileName().toString();
+                    makeNewDirectory(filePath);
 
+                    String fromFile = "/Users/gast/Downloads/unsorted/" + sourceFile;
+                    String toFile = "/Users/gast/Downloads/sorted_folder/" + filePath;
 
-        String fromFile = "/home/mkyong/data/db.debug.conf";
-        String toFile = "/home/mkyong/data/deploy/db.conf";
+                    Path source = Paths.get(fromFile);
+                    Path target = Paths.get(toFile);
 
-        Path source = Paths.get(fromFile);
-        Path target = Paths.get(toFile);
+                    try {
+                        Files.copy(source, target);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+        );
+    }
 
-        try {
+    public static void makeNewDirectory (String nameNewExtFolder) {
+        String path="/Users/gast/Downloads/sorted_folder";
+        String newFolder = nameNewExtFolder;
+        File file = new File(path);
 
-            Files.copy(source, target);
+        if(!file.exists())
+            file.mkdirs();
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        file = new File(path + "/" + nameNewExtFolder);
+        file.mkdirs();
     }
 }

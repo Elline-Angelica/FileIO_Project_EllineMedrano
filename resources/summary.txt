@@ -1,0 +1,12 @@
+       name   |        readable         |         writeable        |
+
+       png:
+       _____
+
+       file1              x                        x
+       file2
+       file3
+
+       -----
+       jpg:
+       -----
