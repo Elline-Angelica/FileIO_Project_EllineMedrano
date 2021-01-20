@@ -1,8 +1,15 @@
 package be.intecbrussel.Code3;
 
+import be.intecbrussel.Code2.Organizer;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 public class Application {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         // Organizer organizer = new Organizer();
         // organizer.manuallyMakeDirectories();
@@ -20,7 +27,16 @@ public class Application {
         copyFiles.copy("txt", "/Users/gast/Downloads/unsorted", "/Users/gast/Downloads/sorted/text");
         copyFiles.copy("wma", "/Users/gast/Downloads/unsorted", "/Users/gast/Downloads/sorted/wma");
 
-
+        String [] pathNames;
+        File f = new File ("Users/gast/Downloads/unsorted");
+        pathNames = f.list();
+        File file = new File("resources/summary3.txt");
+        FileWriter fw = new FileWriter(file);
+        PrintWriter pw = new PrintWriter(fw);
+        for (String s : pathNames) {
+            pw.write(copyFiles.getFileType(s) + "\n");
+        }
+        pw.close();
 
     }
 }

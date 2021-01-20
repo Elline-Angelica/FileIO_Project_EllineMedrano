@@ -15,6 +15,8 @@ import java.util.stream.Stream;
 
 public class Organizer {
 
+
+
 //        String[] extensionType = new String[]{"csv","database","exe","gif","gitignore","jpg","json","hidden","pdf","png","py","summary","txt","wma","zip"};
 //        Organizer og = new Organizer();
 //

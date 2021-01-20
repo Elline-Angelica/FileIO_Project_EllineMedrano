@@ -1,5 +1,7 @@
 package be.intecbrussel.Code3;
 
+import be.intecbrussel.Code2.Organizer;
+
 import java.io.*;
 
 public class FileOrganizer {
@@ -16,6 +18,14 @@ public class FileOrganizer {
             System.out.println(" ");
         }
 
+    }
+
+    public static String getFileType(String path){
+        Organizer og = new Organizer();
+        String fileType;
+        fileType = path.substring(path.indexOf('.',path.lastIndexOf('/'))+1);
+        og.makeNewDirectory(fileType);
+        return fileType;
     }
 
     public void manuallyMakeDirectories() {
