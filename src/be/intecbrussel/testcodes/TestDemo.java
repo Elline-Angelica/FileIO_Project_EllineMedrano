@@ -3,23 +3,22 @@ package be.intecbrussel.testcodes;
 import java.io.*;
 
 public class TestDemo {
-    private static void copy(File src, File dest) throws IOException{
-        InputStream is = null;
-        OutputStream os = null;
-        try {
-            is = new FileInputStream(src);
-            os = new FileOutputStream(dest);
 
-            // buffer size 1K
-            byte[] buf = new byte[1024];
+    public static void main(String a[]){
 
-            int bytesRead;
-            while ((bytesRead = is.read(buf)) > 0) {
-                os.write(buf, 0, bytesRead);
+        File file = new File("/home/students/");
+        String[] list = file.list(new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                if(name.toLowerCase().endsWith(".py")){
+                    return true;
+                } else {
+                    return false;
+                }
             }
-        } finally {
-            is.close();
-            os.close();
+        });
+        for(String f:list){
+            System.out.println(f);
         }
     }
 
