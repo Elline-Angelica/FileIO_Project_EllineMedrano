@@ -1,12 +1,4 @@
-package be.intecbrussel.Code1;
-
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+package be.intecbrussel.testcodes;
 
 // 1. find files - done
 // 2. make new directory - done

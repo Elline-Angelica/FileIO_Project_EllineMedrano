@@ -1,11 +1,8 @@
-package be.intecbrussel.Code1;
+package be.intecbrussel.testcodes;
 
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.stream.Collectors;
 
 public class GetAllFilesWithCertainExtMain {
     public static void main(String[] args) throws IOException {

@@ -1,10 +1,59 @@
-package be.intecbrussel.Code3;
+package be.intecbrussel.service;
 
-import be.intecbrussel.Code2.Organizer;
+import be.intecbrussel.testcodes.moretests.Organizer;
 
 import java.io.*;
 
 public class FileOrganizer {
+
+    private FileTypeOrFolderFilter filter = null;
+
+    public void copy(final String fileType, String fromPath, String outputPath) {
+        filter = new FileTypeOrFolderFilter(fileType);
+        File currentFolder = new File(fromPath);
+        File outputFolder = new File(outputPath);
+        scanFolder(fileType, currentFolder, outputFolder);
+    }
+
+    public void scanFolder(String fileType, File currentFolder, File outputFolder) {
+        System.out.println("Scanning folder [" + currentFolder + "]...");
+        File[] files = currentFolder.listFiles(filter);
+        for (File file : files) {
+            if (file.isDirectory()) {
+                scanFolder(fileType, file, outputFolder);
+            } else {
+                copy(file, outputFolder);
+            }
+        }
+    }
+
+    public void copy(File file, File outputFolder) {
+        try {
+            System.out.println("\tCopying [" + file + "] to folder [" + outputFolder + "]...");
+            InputStream input = new FileInputStream(file);
+            OutputStream out = new FileOutputStream(new File(outputFolder + File.separator + file.getName()));
+            byte data[] = new byte[input.available()];
+            input.read(data);
+            out.write(data);
+            out.flush();
+            out.close();
+            input.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public final class FileTypeOrFolderFilter implements FileFilter {
+        private final String fileType;
+
+        public FileTypeOrFolderFilter(String fileType) {
+            this.fileType = fileType;
+        }
+
+        public boolean accept(File pathname) {
+            return pathname.getName().endsWith("." + fileType) || pathname.isDirectory();
+        }
+    }
 
     public void getFilesFromDirectory(){
 
@@ -89,54 +138,5 @@ public class FileOrganizer {
         String zip  = "/Users/gast/Downloads/sorted/zip";
         File file14 = new File(zip);
         file14.mkdirs();
-    }
-
-    private FileTypeOrFolderFilter filter = null;
-
-    public void copy(final String fileType, String fromPath, String outputPath) {
-        filter = new FileTypeOrFolderFilter(fileType);
-        File currentFolder = new File(fromPath);
-        File outputFolder = new File(outputPath);
-        scanFolder(fileType, currentFolder, outputFolder);
-    }
-
-    public void scanFolder(String fileType, File currentFolder, File outputFolder) {
-        System.out.println("Scanning folder [" + currentFolder + "]...");
-        File[] files = currentFolder.listFiles(filter);
-        for (File file : files) {
-            if (file.isDirectory()) {
-                scanFolder(fileType, file, outputFolder);
-            } else {
-                copy(file, outputFolder);
-            }
-        }
-    }
-
-    public void copy(File file, File outputFolder) {
-        try {
-            System.out.println("\tCopying [" + file + "] to folder [" + outputFolder + "]...");
-            InputStream input = new FileInputStream(file);
-            OutputStream out = new FileOutputStream(new File(outputFolder + File.separator + file.getName()));
-            byte data[] = new byte[input.available()];
-            input.read(data);
-            out.write(data);
-            out.flush();
-            out.close();
-            input.close();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public final class FileTypeOrFolderFilter implements FileFilter {
-        private final String fileType;
-
-        public FileTypeOrFolderFilter(String fileType) {
-            this.fileType = fileType;
-        }
-
-        public boolean accept(File pathname) {
-            return pathname.getName().endsWith("." + fileType) || pathname.isDirectory();
-        }
     }
 }

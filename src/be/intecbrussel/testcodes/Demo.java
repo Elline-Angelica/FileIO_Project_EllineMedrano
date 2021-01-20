@@ -1,4 +1,4 @@
-package be.intecbrussel.Code1;
+package be.intecbrussel.testcodes;
 
 import java.io.File;
 import java.io.IOException;

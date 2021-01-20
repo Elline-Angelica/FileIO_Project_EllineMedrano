@@ -1,11 +1,7 @@
-package be.intecbrussel.Code1;
-
-import be.intecbrussel.Code2.Organizer;
-import be.intecbrussel.Code3.FileOrganizer;
+package be.intecbrussel.testcodes;
 
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Application {

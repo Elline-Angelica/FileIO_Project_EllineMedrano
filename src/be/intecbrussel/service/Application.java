@@ -1,11 +1,6 @@
-package be.intecbrussel.Code3;
+package be.intecbrussel.service;
 
-import be.intecbrussel.Code2.Organizer;
-
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 public class Application {
 
