@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class Demo {
+public class TestDemo2 {
 
     public static void showFiles(File[] files) {
         for (File file : files) {

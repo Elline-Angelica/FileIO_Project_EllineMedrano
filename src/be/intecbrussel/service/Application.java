@@ -7,7 +7,7 @@ public class Application {
 
     public static void main(String[] args) throws IOException {
 
-        // Organizer organizer = new Organizer();
+        // TestOrganizer organizer = new TestOrganizer();
         // organizer.manuallyMakeDirectories();
         // organizer.getFilesFromDirectory();
 

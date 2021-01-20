@@ -4,10 +4,10 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
 
-public class GetAllFilesWithCertainExtMain {
+public class TestGetAllFilesWithCertainExtMain {
     public static void main(String[] args) throws IOException {
 
-        GetAllFilesWithCertainExtMain main=new GetAllFilesWithCertainExtMain();
+        TestGetAllFilesWithCertainExtMain main=new TestGetAllFilesWithCertainExtMain();
         System.out.println("Finding files in the folder");
         System.out.println("-----------------");
         // Read the file

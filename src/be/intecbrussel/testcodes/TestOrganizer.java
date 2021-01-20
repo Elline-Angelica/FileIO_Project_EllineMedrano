@@ -5,12 +5,12 @@ package be.intecbrussel.testcodes;
 // 3. copy unsorted - still figuring out
 // 4. summary text?? - still figuring out as well
 
-public class Organizer {
+public class TestOrganizer {
 
 
 
 //        String[] extensionType = new String[]{"csv","database","exe","gif","gitignore","jpg","json","hidden","pdf","png","py","summary","txt","wma","zip"};
-//        Organizer og = new Organizer();
+//        TestOrganizer og = new TestOrganizer();
 //
 //
 //        for(int i = 0; i<extensionType.length; i++){

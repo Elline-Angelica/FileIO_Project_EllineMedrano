@@ -4,10 +4,10 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class Application {
+public class TestApplication {
     public static void main(String[] args) throws IOException {
 
-        Application app = new Application();
+        TestApplication app = new TestApplication();
         app.scanFiles("/Users/gast/Downloads/finaltest","pdf");
 
 

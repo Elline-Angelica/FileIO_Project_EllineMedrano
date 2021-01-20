@@ -48,7 +48,7 @@ public class TestJunk {
 //        if (!folder.isDirectory() || !folder.exists()) {
 //            throw new IOException( folder.getName() + " : Not a folder or not exist");
 //        }
-//        File files[] = Organizer.list(folder, false); // don't include subfolder
+//        File files[] = TestOrganizer.list(folder, false); // don't include subfolder
 //        Arrays.sort(files, new Comparator() {
 //            public int compare(final Object o1, final Object o2) {
 //                String s1 = ((File) o1).getName().toLowerCase();
