@@ -1,0 +1,32 @@
+name   |        readable         |         writeable        |
+
+png:
+-----
+
+file1  |         x               |                x         |
+file2  |         x               |                /         |
+file3  |         x               |                /         |
+
+-----
+jpg:
+-----
+
+file1  |         x               |                x         |
+file2  |         x               |                x         |
+file3  |         x               |                x         |
+file4  |         x               |                /         |
+
+-----
+hidden:
+-----
+
+file1  |         x               |                /         |
+
+-----
+text:
+-----
+
+txt1   |         x               |                x         |
+...    |         x               |                /         |
+
+
