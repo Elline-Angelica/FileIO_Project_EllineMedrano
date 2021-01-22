@@ -1,4 +1,6 @@
-package be.intecbrussel.service;
+package be.intecbrussel.app;
+
+import be.intecbrussel.service.FileOrganizer;
 
 import java.io.FileWriter;
 import java.io.IOException;
