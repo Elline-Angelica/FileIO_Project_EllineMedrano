@@ -1,4 +1,4 @@
-package be.intecbrussel.service;
+package be.intecbrussel.testcodes;
 
 import be.intecbrussel.testcodes.moretests.Organizer;
 
